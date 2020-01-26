@@ -1,8 +1,5 @@
 @import 'bootstrap/dist/css/bootstrap';
 
-.navbar-brand{
-  font-size: 3rem
-}
 
 .search-area {
   padding-top: 50px;
@@ -15,4 +12,12 @@
 }
 .result-block {
   display: inline-block;
+  margin-bottom: 1rem;
+}
+.logout-btn {
+  margin-right: 5px;
+}
+.user-li {
+  margin-top: 10px;
+  margin-right: 1rem
 }

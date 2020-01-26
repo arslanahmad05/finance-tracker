@@ -1,0 +1,23 @@
+<div class="result-block">
+  <%= render 'layouts/messages' %>
+</div>
+<% if @friends %>
+  <div class="card card-header result-block">
+    <table>
+      <tbody>
+
+    <% @friends.each do |friend| %>
+        <tr>
+
+          <td><strong>Name: </strong><%= friend.firstname %> <%= friend.lastname %></td>
+          <td><strong>Email: </strong><%= friend.email %></td>
+          <td>Action:
+            <%= link_to 'Veiw Profile', "#", class: "btn btn-xs btn-success", method: :post %>
+            <%= link_to 'Follow User?', "#", class: "btn btn-xs btn-success", method: :post %>
+          </td>
+        </tr>
+    <% end %>
+      </tbody>
+    </table>
+  </div>
+<% end %>
