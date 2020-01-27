@@ -13,7 +13,11 @@
           <td><strong>Email: </strong><%= friend.email %></td>
           <td>Action:
             <%= link_to 'Veiw Profile', "#", class: "btn btn-xs btn-success", method: :post %>
-            <%= link_to 'Follow User?', "#", class: "btn btn-xs btn-success", method: :post %>
+            <% if current_user.not_friends_with?(friend.id) %>
+              <%= link_to 'Follow User?', friendships_path(friend: friend), class: "btn btn-xs btn-success", method: :post %>
+            <% else %>
+              <span class="badge badge-seconder"> You are Friends</span>
+            <% end %>
           </td>
         </tr>
     <% end %>

@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   get 'my_friends', to: 'users#my_friends'
   get 'search_stock', to: 'stocks#search'
   get 'search_friend', to: 'users#search'
+  get 'users', to: 'users#index'
+  get 'users/useredit/:id', to: 'users#useredit'
+  resources :friendships, only: [:create, :destroy]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root 'welcomes#index'
 end
